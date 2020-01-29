@@ -1,10 +1,10 @@
-import java.util.Random;
+  import java.util.Random;
 
 /**
  *  A class representing a square matrix with some methods to manipulate
  *  such matrices.
  *  
- * @author Jim Teresco, modified by Prof. White and (your names here)
+ * @author Ting Liu, modified by Andrew Lin and Matthew Scolaro
  * @version Fall 2019
  */
 public class Matrix2D 
@@ -103,33 +103,60 @@ public class Matrix2D
      */
     public int maxValue()
     {
-        //add your code here
-        
-        return -1;
+        int largest = data[0][0];
+        for (int i = 0; i < data.length; i++)
+        {
+          for (int x = 0; x < data.length; x++)
+          {
+           if (data[i][x] > largest)
+           {
+              largest = data[i][x];
+            }
+          }
+        }
+        return largest;
     }
     
     /**
-     *  Compare two matrices for equality.  Two matricies are equal if they have the
-     *  same dimensions and the same elements at every location in the matrix.
-     *  
-     *  Note that we must take a parameter of type Object to override the inherited 
-     *  equals method. 
-     *  
-     *  @param other The Matrix2D object to be compared to this matrix.
-     */ 
-    public boolean equals(Object other) 
-    {
+         *  Compare two matrices for equality.  Two matricies are equal if they have the
+         *  same dimensions and the same elements at every location in the matrix.
+         *  
+         *  Note that we must take a parameter of type Object to override the inherited 
+         *  equals method. 
+         *  
+         *  @param other The Matrix2D object to be compared to this matrix.
+         */ 
+        public boolean equals(Object other)
+        {
         Matrix2D otr = (Matrix2D) other;
-
+        
         if (data.length != otr.data.length){
             return false;
         }
-
-        //add your code here
-
+        else
+        {
+          for (int i = 0; i < data.length; i++)
+          {   
+            for (int x = 0; x < data.length; x++)
+            {
+                try {
+                  
+                if (data[i][x] != otr.get(i, x))
+                {
+                  return false;
+                }
+                
+               } catch (Exception e)
+               {
+                   e.printStackTrace();
+                }
+            
+            }    
+          }
+        }
         return true;
     }
-
+    
     /**
      *  Nondestructive matrix-matrix add.  Throws an exception if the input 
      *  matrix does not have the same dimensions as this matrix.
@@ -143,15 +170,21 @@ public class Matrix2D
      *          matrix and this matrix for the same row and column
      *          indexes.
      */ 
-    public Matrix2D add(Matrix2D other) throws Matrix2DSizeMismatchException 
+    public Matrix2D add(Matrix2D other) throws Matrix2DSizeMismatchException, Matrix2DIndexOutOfBoundsException 
     {    
+        Matrix2D newMatrix = new Matrix2D(data.length);
         if (data.length != other.data.length) {
             throw new Matrix2DSizeMismatchException(data.length, other.data.length);
         }
 
-        //add your code here
-        
-        return null;
+        for (int i = 0; i < data.length; i++)
+         {   
+            for (int x = 0; x < data.length; x++)
+            {
+                newMatrix.set(i, x, data[i][x] + other.get(i, x));  
+            }
+         }   
+        return newMatrix;
     }
 
     /**
@@ -161,7 +194,14 @@ public class Matrix2D
      */
     public void scale(int by)
     {
-        //add your code here
+        for (int i = 0; i < data.length; i++)
+        {   
+            for (int x = 0; x < data.length; x++)
+            {
+                data[i][x] = data[i][x] * by;  
+                
+            }
+        }   
     }
 
     /**

@@ -17,7 +17,7 @@ public class Pool
 {
     //The number of days in the pool.
     public static final int DAYS = 7;
-    
+
     //The number of hours in the pool.
     public static final int HOURS = 24;
 
@@ -53,7 +53,7 @@ public class Pool
         boolean completed = false;
 
         if(day > 0 && day <= DAYS && hour >= 0 && hour < HOURS && 
-           luckyDay[hour][day] == null && amount > 0){
+        luckyDay[hour][day] == null && amount > 0){
             luckyDay[hour][day] = new Entry(name, amount);
             completed = true;
         }
@@ -71,24 +71,34 @@ public class Pool
     {
         int count = 0;
 
-        //add your code here
-        
+        for (int hour = 0; hour < HOURS; hour++)
+        {
+            for (int day = 0; day < DAYS; day++)
+            {
+                if (luckyDay[hour][day] == null)
+                {
+                    count++;
+                }
+
+            }
+            
+        }
         return count;
     }
-    
-    /**
-     * Return the winning entry for the lucy day and hour.
-     * The lucky day must be in the range,[1, DAYS + 1] and
-     * the lucky hour hour must be in the range [0, HOURS).  
-     * Otherwise, return null.
-     * 
-     * @param The lucky day.
-     * @param The lucky hour.
-     * @param Return the winning entry or null if the input is
-     *        not in the correct range.
-     */
-    public Entry getWinner(int day, int hour)
-    {
+
+        /**
+         * Return the winning entry for the lucy day and hour.
+         * The lucky day must be in the range,[1, DAYS + 1] and
+         * the lucky hour hour must be in the range [0, HOURS).  
+         * Otherwise, return null.
+         * 
+         * @param The lucky day.
+         * @param The lucky hour.
+         * @param Return the winning entry or null if the input is
+         *        not in the correct range.
+         */
+        public Entry getWinner(int day, int hour)
+        {
         if(day > 0 && day <= DAYS && hour >= 0 && hour < HOURS){
             return luckyDay[hour][day];
         }
@@ -105,8 +115,18 @@ public class Pool
     {
         double total = 0.0;
 
-        //add your code here
-        
+        for (int hour = 0; hour < HOURS; hour++)
+        {
+            for (int day = 0; day < DAYS + 1; day++)
+            {
+              if (luckyDay[hour][day] != null)
+               {   
+               total = total + luckyDay[hour][day].getAmount(); 
+               }
+            }
+            
+        }
+
         return total;
     }
 
@@ -130,7 +150,7 @@ public class Pool
             sb.append(day + "\t");
         }
         sb.append("\n");
-        
+
         for (int hour = 0; hour < HOURS; hour++) {
             sb.append(hour + "\t");
             for (int day = 1; day <= DAYS; day++) {

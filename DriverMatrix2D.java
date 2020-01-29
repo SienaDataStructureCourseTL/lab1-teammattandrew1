@@ -31,7 +31,7 @@ public class DriverMatrix2D
 
         // try to get a value out of range
         try {
-            double x = a.get(7, 2);
+            double x = a.get(3, 2);
         }
         catch (Exception e) {
             System.err.println(e);
