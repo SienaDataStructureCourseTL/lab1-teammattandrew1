@@ -23,10 +23,13 @@ public class Collaborate
         
         System.out.println("And another modifies between the previous and this...");
         
-        System.out.println("And another modifies after this...");
+        System.out.println("This is Andrew editing");
         
         System.out.println("git will save you from a copy and paste disaster.");
         
-        System.out.println("This is Andrew editing");
+        System.out.println("This is Matt, testing!");
+        
+        
+        
     }
 }
