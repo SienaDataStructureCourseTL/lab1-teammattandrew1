@@ -2,17 +2,17 @@
 /**
  * Git collaboration example for CSIS 210
  *
- * @author Jim Teresco, modified by group members:
+ * @author Ting Liu, modified by group members:
  * 
- * 1) replace with one group member's name
+ * 1) Matt Scolaro
  *
  *
- * 2) replace with another group member's name
+ * 2) Andrew Lin
  *
  *
- * 3) 3rd member if a group of 3 only
  * 
- * @version Fall 2019
+ * 
+ * @version Spring 2020
  */
 public class Collaborate
 {
