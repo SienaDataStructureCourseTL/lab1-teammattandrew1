@@ -97,8 +97,8 @@ public class Pool
          * @param Return the winning entry or null if the input is
          *        not in the correct range.
          */
-        public Entry getWinner(int day, int hour)
-        {
+    public Entry getWinner(int day, int hour)
+    {
         if(day > 0 && day <= DAYS && hour >= 0 && hour < HOURS){
             return luckyDay[hour][day];
         }
