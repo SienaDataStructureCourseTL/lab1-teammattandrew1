@@ -60,7 +60,8 @@ public class Pool
 
         return completed;
     }
-
+    
+    
     /**
      * Return the number of entries still available for this pool.
      * (An entry is available if its value is null.)
@@ -86,8 +87,8 @@ public class Pool
         return count;
     }
 
-        /**
-         * Return the winning entry for the lucy day and hour.
+    /**
+         * Return the winning entry for the lucky day and hour.
          * The lucky day must be in the range,[1, DAYS + 1] and
          * the lucky hour hour must be in the range [0, HOURS).  
          * Otherwise, return null.
