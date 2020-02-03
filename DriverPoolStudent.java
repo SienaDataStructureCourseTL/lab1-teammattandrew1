@@ -5,8 +5,8 @@
  * dollar signs or there are more than two decimal
  * places.
  * 
- * @author 
- * @version Spring 2019
+ * @author (Andrew Lin) (Matt Scolaro)
+ * @version Spring 2020
  */
 
 import java.util.Scanner;

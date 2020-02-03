@@ -1,8 +1,8 @@
 /**
  * This class represents an entry in a game pool.
  * 
- * @author Prof. White
- * @version Fall 2019
+ * @author Prof. White (Andrew Lin & Matt Scolaro)
+ * @version Spring 2020
  */
 public class Entry
 {

@@ -10,8 +10,8 @@
  * entered in the select day (1-7, Sunday - Saturday)
  * and hour (0-23, military hours).
  * 
- * @author Prof. White 
- * @version Spring 2019
+ * @author Prof. White (Andrew Lin & Matt Scolaro)
+ * @version Spring 2020
  */
 public class Pool
 {
